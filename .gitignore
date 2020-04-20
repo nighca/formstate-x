@@ -1,5 +1,5 @@
 node_modules
-lib
-esm
+# lib
+# esm
 coverage
 docs
