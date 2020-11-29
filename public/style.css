@@ -1,0 +1,7 @@
+.__dumi-default-navbar-logo {
+  padding-left: 80px !important;
+}
+
+.__dumi-default-search > ul li span:first-child {
+  vertical-align: unset !important;
+}

@@ -14,7 +14,7 @@
     "coverage": "rm -rf coverage && jest --coverage",
     "build:esm": "rm -rf ./esm && tsc --module es6 --outDir ./esm",
     "build:lib": "rm -rf ./lib && tsc",
-    "build:doc": "rm -rf ./docs && typedoc",
+    "build:api-docs": "./build/api-docs.sh",
     "build": "npm run build:esm && npm run build:lib",
     "prepublishOnly": "npm run test && npm run build",
     "ci": "tsc --noEmit && npm run coverage && npm run build && npm run build:doc"
@@ -33,13 +33,17 @@
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^12.7.12",
+    "@types/react": "^17.0.0",
+    "@types/source-map": "^0.5.7",
     "formstate": "^1.0.0",
     "jest": "^25.2.7",
     "mobx": "^5.15.4",
+    "react": "^17.0.1",
     "ts-jest": "^25.3.1",
-    "typedoc": "~0.16.11",
-    "typedoc-twilio-theme": "^1.0.0",
-    "typescript": "^3.6.3"
+    "ts-node": "^9.0.0",
+    "typedoc": "^0.19.0",
+    "typedoc-plugin-markdown": "^3.0.11",
+    "typescript": "^3.9.0"
   },
   "dependencies": {}
 }
