@@ -14,7 +14,7 @@ We will start with a simple signin-form demo:
 
 <code src="./signin-form.tsx"></code>
 
-Based on things we learnt from [UI library binding](/TODO) section, we use [Material-UI](https://mui.com/) to help build this demo. It should be mostly the same if you use other UI libraries to do so.
+Based on things we learnt from [UI library binding](/guide/binding) section, we use [Material-UI](https://mui.com/) to help build this demo. It should be mostly the same if you use other UI libraries to do so.
 
 Notice that we compose a form state (variable `form`) with three field states (`username`, `password` & `remember`). It's archieved by using class `FormState`, which takes multiple field states together to one form state. You can manage states of all the inputs as a whore with the form state, such as:
 
