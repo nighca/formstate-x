@@ -1,18 +1,18 @@
-/** A truthy string or falsy values. */
-export type ValidationResponse =
+/** Result of validation. */
+export type ValidationResult =
   string
   | null
   | undefined
   | false
 
-/** The return value of a validator. */
-export type ValidatorResponse = 
-  ValidationResponse
-  | Promise<ValidationResponse>
+/** Return value of validator. */
+export type ValidatorResult = 
+  ValidationResult
+  | Promise<ValidationResult>
 
 export type Validation<TValue> = {
-  value: TValue // value for the response
-  response: ValidatorResponse // response for the value
+  value: TValue // value for the validation
+  result: ValidatorResult // result of applying validators
 }
 
 /**
@@ -20,7 +20,7 @@ export type Validation<TValue> = {
  * If a truthy string is returned it represents a validation error
  **/
 export interface Validator<TValue> {
-  (value: TValue): ValidatorResponse
+  (value: TValue): ValidatorResult
 }
 
 export type Error = string | undefined

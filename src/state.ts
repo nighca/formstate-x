@@ -1,5 +1,5 @@
 import { action, autorun, computed, makeObservable, observable, when } from 'mobx'
-import { Error, IState, Validation, ValidateResult, ValidateStatus, ValidationResponse, Validator } from './types'
+import { Error, IState, Validation, ValidateResult, ValidateStatus, ValidationResult, Validator } from './types'
 import Disposable from './disposable'
 import { applyValidators, isPromiseLike } from './utils'
 
@@ -69,7 +69,7 @@ export abstract class ValidatableState<V> extends BaseState implements IState<V>
   /**
    * Set error info.
    */
-  @action setError(error: ValidationResponse) {
+  @action setError(error: ValidationResult) {
     this._error = error ? error : undefined
   }
 
@@ -92,11 +92,11 @@ export abstract class ValidatableState<V> extends BaseState implements IState<V>
 
     // create validation by running validators
     const value = this.value
-    const response = applyValidators(value, this.validatorList)
-    const validation = this.validation = { value, response }
+    const result = applyValidators(value, this.validatorList)
+    const validation = this.validation = { value, result }
 
     // read validation result (there may be async validators)
-    const error = isPromiseLike(response) ? await response : response
+    const error = isPromiseLike(result) ? await result : result
 
     // if validation outdated, just drop it
     if (this.validation !== validation) return

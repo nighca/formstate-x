@@ -1,15 +1,15 @@
 import { isObservableArray, IObservableArray } from 'mobx'
-import { Validator, ValidationResponse, ValidatorResponse } from './types'
+import { Validator, ValidationResult, ValidatorResult } from './types'
 
 export function isPromiseLike(arg: any): arg is Promise<any> {
   return arg != null && typeof arg === 'object' && typeof arg.then === 'function'
 }
 
-export function isEmpty(response: ValidationResponse): boolean {
+export function isEmpty(response: ValidationResult): boolean {
   return !response
 }
 
-export function asyncResponsesAnd(asyncResponses: Array<Promise<ValidationResponse>>): ValidatorResponse {
+export function asyncResponsesAnd(asyncResponses: Array<Promise<ValidationResult>>): ValidatorResult {
   if (asyncResponses.length === 0) {
     return null
   }
@@ -38,7 +38,7 @@ export function applyValidators<TValue>(value: TValue, validators: Validator<TVa
     return validators[0](value)
   }
 
-  const asyncResponses: Array<Promise<ValidationResponse>> = []
+  const asyncResponses: Array<Promise<ValidationResult>> = []
 
   for (const validator of validators) {
     const response = validator(value)
