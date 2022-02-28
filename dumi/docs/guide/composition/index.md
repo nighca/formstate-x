@@ -6,7 +6,7 @@ toc: menu
 
 In real applications, a form usually consists of plenty of inputs. A complex input component (such as date-picker, searchable-select, etc) usually consists of more than one basic input components. Composition, is the key problem need to be solved by form tools.
 
-With composition ability provided by formstate-x, you can build arbitrary complex forms or input components with maximal code reuse.
+With composability provided by formstate-x, you can build arbitrary complex forms or input components with maximal code reuse.
 
 ### Simple Form
 

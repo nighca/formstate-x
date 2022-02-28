@@ -23,7 +23,7 @@ export default defineConfig({
   alias: {
     'formstate-x': path.join(__dirname, 'src')
   },
-  styles: [`.__dumi-default-navbar-logo { color: #454d64; }`],
+  styles: [`.__dumi-default-navbar-logo { color: #454d64 !important; }`],
   mfsu: {}
   // more config: https://d.umijs.org/config
 })
