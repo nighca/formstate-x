@@ -2,5 +2,7 @@ node_modules
 /lib
 /esm
 /coverage
-.umi
 .vscode
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production

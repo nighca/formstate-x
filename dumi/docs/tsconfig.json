@@ -15,6 +15,7 @@
     "noUnusedParameters": true,
     "lib": ["ESNext", "DOM"],
     "paths": {
+      "@@/*": [".dumi/tmp/*"],
       "formstate-x": ["../src"]
     },
     "jsx": "react"

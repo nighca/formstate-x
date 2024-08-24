@@ -522,7 +522,7 @@ describe('fromV2', () => {
     })
     it('should throw with unknown validate status', () => {
       const stateV2 = new V2DumbState('')
-      stateV2._validateStatus = -1
+      stateV2._validateStatus = -1 as any
       const state = fromV2(stateV2)
       expect(() => state.validateStatus).toThrowError('Invalid value occurred: -1.')
     })
@@ -718,7 +718,7 @@ describe('toV2', () => {
     }
     it('should throw with unknown validate status', () => {
       const stateV3 = new V3DumbState('')
-      stateV3.validateStatus = -1
+      stateV3.validateStatus = -1 as any
       const state = toV2(stateV3)
       expect(() => state._validateStatus).toThrowError('Invalid value occurred: -1.')
     })

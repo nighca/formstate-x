@@ -1,2 +1,5 @@
 /src
 /dist
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
